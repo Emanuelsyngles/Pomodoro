@@ -4,20 +4,44 @@ const curtobtn = document.querySelector('.app__card-button--curto')
 const longobtn = document.querySelector('.app__card-button--longo')
 const fundo = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
+const btns = document.querySelectorAll('.app__card-button')
+const musicaFoco = document.querySelector('#alternar-musica')
+const startPausebtn = document.querySelector('#start-pause')
+
+const musica = new Audio('../sons/luna-rise-part-one.mp3') 
+musica.loop = true
+musica.volume = '0.3'
+
+let tempoDecorridoEmSegundos = 5
+let intervaloId = null
+
+musicaFoco.addEventListener('change', () => {
+    if(musica.paused) {
+        musica.play()
+    } else {
+        musica.pause()
+    }
+})
 
 focobtn.addEventListener('click', () => {
     alterarContexto('foco')
+    focobtn.classList.add('active')
 })
 
 curtobtn.addEventListener('click', () => {
     alterarContexto('descanso-curto')
+    curtobtn.classList.add('active')
 })
 
 longobtn.addEventListener('click', () => {
     alterarContexto('descanso-longo')
+    longobtn.classList.add('active')
 })
 
 function alterarContexto(contexto) {
+    btns.forEach(function (contexto){
+        contexto.classList.remove('active')
+    })
     html.setAttribute('data-contexto', contexto)
     fundo.setAttribute('src', `../imagens/${contexto}.png`)
     switch (contexto) {
@@ -37,4 +61,17 @@ function alterarContexto(contexto) {
         default:
             break;
     }
+}
+
+const contagemRegressiva = () => {
+    iniciar()
+    tempoDecorridoEmSegundos -= 1
+    console.log('Temporizador' + tempoDecorridoEmSegundos)
+}
+
+startPausebtn.addEventListener('click', contagemRegressiva)
+
+
+function iniciar() {
+    intervaloId = setInterval(contagemRegressiva, 1000)
 }
