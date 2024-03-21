@@ -23,7 +23,7 @@ const parar = new Audio('../sons/pause.mp3')
 
 const final = new Audio('../sons/beep.mp3')
 
-let tempoDecorridoEmSegundos = 5
+let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
 musicaFoco.addEventListener('change', () => {
@@ -35,21 +35,25 @@ musicaFoco.addEventListener('change', () => {
 })
 
 focobtn.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 1500
     alterarContexto('foco')
     focobtn.classList.add('active')
 })
 
 curtobtn.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 300
     alterarContexto('descanso-curto')
     curtobtn.classList.add('active')
 })
 
 longobtn.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 900
     alterarContexto('descanso-longo')
     longobtn.classList.add('active')
 })
 
 function alterarContexto(contexto) {
+    mostrarTempo()
     btns.forEach(function (contexto){
         contexto.classList.remove('active')
     })
@@ -107,6 +111,9 @@ function zerar() {
 }
 
 function mostrarTempo() {
-    const tempo = tempoDecorridoEmSegundos
-    tempoNaTela.innerHTML = `${tempo}`
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000)
+    const tempoFormatado = tempo.toLocaleTimeString('pt-br', {minute: '2-digit', second: '2-digit'})
+    tempoNaTela.innerHTML = `${tempoFormatado}`
 }
+
+mostrarTempo()
