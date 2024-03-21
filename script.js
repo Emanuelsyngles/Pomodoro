@@ -2,6 +2,9 @@ const html = document.querySelector('html')
 const focobtn = document.querySelector('.app__card-button--foco')
 const curtobtn = document.querySelector('.app__card-button--curto')
 const longobtn = document.querySelector('.app__card-button--longo')
+const iniciarOuPausarbtn = document.querySelector('#start-pause span')
+const buttonimg = document.querySelector('.app__card-primary-butto-icon')
+
 const fundo = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
 const btns = document.querySelectorAll('.app__card-button')
@@ -89,11 +92,15 @@ function iniciar() {
         parar.play()
         return
     }
-    intervaloId = setInterval(contagemRegressiva, 1000)
     audioIniciar.play()
+    intervaloId = setInterval(contagemRegressiva, 1000)
+    iniciarOuPausarbtn.textContent = "Pausar"
+    buttonimg.setAttribute("src", "../imagens/pause.png")
 }
 
 function zerar() {
     clearInterval(intervaloId)
+    iniciarOuPausarbtn.textContent = 'Começar'
+    buttonimg.setAttribute("src", "../imagens/play_arrow.png")
     intervaloId = null
 }
