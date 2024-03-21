@@ -4,6 +4,7 @@ const curtobtn = document.querySelector('.app__card-button--curto')
 const longobtn = document.querySelector('.app__card-button--longo')
 const iniciarOuPausarbtn = document.querySelector('#start-pause span')
 const buttonimg = document.querySelector('.app__card-primary-butto-icon')
+const tempoNaTela = document.querySelector('#timer')
 
 const fundo = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
@@ -81,7 +82,7 @@ const contagemRegressiva = () => {
         return
     }
     tempoDecorridoEmSegundos -= 1
-    console.log('Temporizador' + tempoDecorridoEmSegundos)
+    mostrarTempo()
 }
 
 startPausebtn.addEventListener('click', iniciar)
@@ -103,4 +104,9 @@ function zerar() {
     iniciarOuPausarbtn.textContent = 'Começar'
     buttonimg.setAttribute("src", "../imagens/play_arrow.png")
     intervaloId = null
+}
+
+function mostrarTempo() {
+    const tempo = tempoDecorridoEmSegundos
+    tempoNaTela.innerHTML = `${tempo}`
 }
