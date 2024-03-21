@@ -27,4 +27,4 @@ Cada uma das seções terão cores e imagens diferentes para uma maior variaçã
 
  ## Como acessar?
 
-Acesse clicando no link: [projeto]()
+Acesse o projeto clicando no link: [projeto](https://pomodorotecnica.netlify.app/)
