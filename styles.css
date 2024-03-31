@@ -518,6 +518,14 @@ h1, h2, h3, h4, h5, h6 {
     height: 70px;
     border-radius: 10px;
     gap: 1em;
+    padding: 1em;
+}
+
+.dropdown-container {
+    background-color: #B872FF;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 
