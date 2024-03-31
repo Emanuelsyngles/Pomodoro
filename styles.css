@@ -522,11 +522,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dropdown-container {
-    background-color: #B872FF;
+    background-color: #ffffff;
+    display: flex;
+    align-content: center;
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
 }
+
 
 
 /* fim - toggle */
