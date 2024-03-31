@@ -510,6 +510,16 @@ h1, h2, h3, h4, h5, h6 {
     cursor: not-allowed;
 }
 
+.app__section-task-lista-item {
+    background-color: #81868C;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    gap: 1em;
+}
+
 
 /* fim - toggle */
 
