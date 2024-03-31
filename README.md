@@ -8,7 +8,7 @@ Você terá 3 divisões de técnicas pomodoro, cada um com um tempo estabelecido
 Cada uma das seções terão cores e imagens diferentes para uma maior variação, também podemos ativar a música relaxante apertando no botaão indicado como música.
 
 ## Status
---  Projeto Pomodoro concluído 🎯
+--  Projeto fokus concluído 🎯
 
 ## Objetivo
 --  O principal objetivo desse projeto é ajudar as pessoas com o foco nos estudos ou trabalho, e também aplicar conhecimentos em javascript na parte do DOM.
